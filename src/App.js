@@ -7,10 +7,9 @@ import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 
 import ContactUs from "./pages/ContactUs";
-import Votes from "./pages/Votes";
-
+import Votes from "../src/pages/Votes";
 import About from "./pages/About";
-
+import Polls from "../src/pages/Polls";
 
 function App() {
   return (
@@ -19,12 +18,13 @@ function App() {
       <main style={{ backgroundColor: "#252525", color: "white" }}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/Admin" element={<Admin />} /> 
+          <Route path="/Admin" element={<Admin />} />
           <Route path="/Vote" element={<Votes />} />
           <Route path="/Navbar" element={<Navbar />} />
-           <Route path="/Contact" element={<ContactUs />} /> 
-          
-           <Route path="/About" element={<About />} /> 
+          <Route path="/Contact" element={<ContactUs />} />
+
+          <Route path="/About" element={<About />} />
+          <Route path="/Polls" element={<Polls />} />
         </Routes>
 
         <Footer />
