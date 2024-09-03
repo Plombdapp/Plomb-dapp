@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+import Admin from "./pages/Admin";
+
+import LandingPage from "./pages/LandingPage";
+import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
+
+import ContactUs from "./pages/ContactUs";
+import Votes from "./pages/Votes";
+
+import About from "./pages/About";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <main style={{ backgroundColor: "#252525", color: "white" }}>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Admin" element={<Admin />} /> 
+          <Route path="/Vote" element={<Votes />} />
+          <Route path="/Navbar" element={<Navbar />} />
+           <Route path="/Contact" element={<ContactUs />} /> 
+          
+           <Route path="/About" element={<About />} /> 
+        </Routes>
+
+        <Footer />
+      </main>
+    </>
   );
 }
 
