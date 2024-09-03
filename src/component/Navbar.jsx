@@ -4,7 +4,7 @@ import plomb from "../component/assets/plomb.png";
 
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-4 border-b-2 border-b-[#00ACE3]  bg-[#313131] text-white">
+    <nav className=" flex justify-between items-center p-4 border-b-2 border-b-[#00ACE3]  bg-[#313131] text-white">
       <div className="ml-12">
         <img src={plomb} alt="plomb-logo" className="hover:w-40 hover:h-10" />
       </div>

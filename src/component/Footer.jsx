@@ -3,6 +3,7 @@ import { FaDiscord } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -32,11 +33,17 @@ function Footer() {
             <p class="text-[#868686]">FAQ</p>
             <p class="text-[#868686]">Contact Us</p>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-2 flex flex-col">
             <h1 class="text-2xl font-bold">Quick Links</h1>
-            <p class="text-[#868686]">Home</p>
-            <p class="text-[#868686]">About Us</p>
-            <p class="text-[#868686]">Features</p>
+            <Link to="" class="text-[#868686]">
+              Home
+            </Link>
+            <Link to="" class="text-[#868686]">
+              About Us
+            </Link>
+            <Link to="" class="text-[#868686]">
+              Features
+            </Link>
           </div>
           <div class="space-y-2">
             <h1 class="text-2xl font-bold">Legal</h1>

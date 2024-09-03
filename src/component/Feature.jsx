@@ -1,7 +1,7 @@
 import React from "react";
 import { FaSquareFull } from "react-icons/fa";
 
-function Feature({ title, text1, text2, image }) {
+function Feature({ title, text1, text2, pic }) {
   return (
     <div className="mx-28">
       <div>
@@ -17,11 +17,7 @@ function Feature({ title, text1, text2, image }) {
               <p className="card-text">{text2}</p>
             </div>
           </div>
-          <img
-            src={image}
-            alt="card image"
-            className="rounded-lg object-cover"
-          />
+          <img src={pic} alt="card image" className="rounded-lg object-cover" />
         </div>
       </div>
     </div>
