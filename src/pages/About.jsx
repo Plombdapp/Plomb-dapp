@@ -11,7 +11,7 @@ function About() {
   return (
     <div>
       <AboutPlomb />
-      <div className="mx-52">
+      <div className="md:mx-52 mx-4">
         <div>
           <h1 className="text-[#00ACE3] text-center text-3xl">Meet the team</h1>
           <p className="text-center mt-4">
@@ -22,7 +22,7 @@ function About() {
             the passionate individuals behind PLOMB
           </p>
         </div>
-        <h1></h1>
+
         <div className="flex justify-between mt-16">
           <Team
             pic={Tobi}
