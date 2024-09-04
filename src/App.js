@@ -8,10 +8,14 @@ import Footer from "./component/Footer";
 import ZKME from "./pages/ZKME";
 import ContactUs from "./pages/ContactUs";
 import Votes from "../src/pages/Votes";
+
 import About from "./pages/About";
 import Polls from "../src/pages/Polls";
 import { Results } from "./pages/Results";
 import '@zkmelabs/widget/dist/style.css';
+
+import { configureWeb3Modal } from "./context";
+configureWeb3Modal();
 function App() {
   return (
     <>

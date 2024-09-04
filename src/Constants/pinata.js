@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const pinataApiKey = 'e9ade981a90fb6ccf2d9';
 const pinataSecretApiKey = 'c4c9b41edb64ed8e45adddc16d85403c4b0f687308ddc8d0b74858109cf708b2';
-const pinataGateway = 'rose-hidden-silverfish-585.mypinata.cloud';
+const pinataGateway = 'https://rose-hidden-silverfish-585.mypinata.cloud';
 
 export const uploadToPinata = async (file) => {
   const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;

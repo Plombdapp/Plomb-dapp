@@ -23,7 +23,7 @@ function Navbar() {
         </Link>
       </div>
       <button className="bg-[#00ACE3] px-4 py-2 rounded-md font-semibold mr-12">
-        Connect Wallet
+      <w3m-button />
       </button>
     </nav>
   );

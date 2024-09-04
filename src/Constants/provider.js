@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 
-const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID");
+const provider = new ethers.providers.JsonRpcProvider("https://sepolia-rollup.arbitrum.io/rpc");
 
 export const getContract = (contractAddress, abi) => {
   const contract = new ethers.Contract(contractAddress, abi, provider);
