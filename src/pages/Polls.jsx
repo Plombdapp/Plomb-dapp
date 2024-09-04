@@ -7,7 +7,10 @@ import Filter from "../component/Filter";
 function Polls() {
   return (
     <div className="pt-32 mx-52">
-      <div className="flex gap-12">
+      <h1 className="text-[#00ACE3] text-2xl text-center font-semibold">
+        View Poll
+      </h1>
+      <div className="flex gap-12 mt-12">
         <input
           type="text"
           name="numberOfParticipants"
