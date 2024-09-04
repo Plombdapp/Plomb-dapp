@@ -10,6 +10,7 @@ import ContactUs from "./pages/ContactUs";
 import Votes from "../src/pages/Votes";
 import About from "./pages/About";
 import Polls from "../src/pages/Polls";
+import { Results } from "./pages/Results";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Route path="/Vote" element={<Votes />} />
           <Route path="/Navbar" element={<Navbar />} />
           <Route path="/Contact" element={<ContactUs />} />
-
+          <Route path="/Results" element={<Results />} />
           <Route path="/About" element={<About />} />
           <Route path="/Polls" element={<Polls />} />
         </Routes>

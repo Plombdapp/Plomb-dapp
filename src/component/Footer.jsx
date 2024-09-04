@@ -55,10 +55,19 @@ function Footer() {
         {/* <!-- connect with us --> */}
         <h2 class="mt-24">Connect with Us</h2>
         <div className="flex gap-4 mt-2">
-          <FaDiscord className="w-6 h-6 text-[#00ACE3]" />
+        
+          <Link to="https://discord.com/invite/AzwwvPBF">
+          <FaDiscord className="w-6 h-6 text-[#00ACE3]"
+          /></Link>
+          <Link to="https://github.com/Plombdapp">
           <FaGithub className="w-6 h-6 text-[#00ACE3]" />
+          </Link>
+          <Link to=" https://x.com/plombdapp">
           <BsTwitterX className="w-6 h-6 text-[#00ACE3]" />
+          </Link>
+          <Link to="https://www.linkedin.com/in/plomb-dapp-6a7595323?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYhmbz%2BlnSQClvGJtgYDmSg%3D%3D">
           <FaLinkedinIn className="w-6 h-6 text-[#00ACE3]" />
+          </Link>
         </div>
 
         <h2 class="text-center text-lg text-[#EDEDED] mt-20">
