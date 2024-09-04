@@ -1,7 +1,7 @@
 PLOMB - Decentralized Voting Application
 
 Overview
-PLOMB is a decentralized voting application that leverages blockchain technology to create a secure, transparent, and accessible voting platform. Built on the Ethereum blockchain, PLOMB ensures the integrity of elections while providing privacy and identity verification through zkMe. This application enables users to create polls, vote securely, and see real-time results—all in a decentralized manner.
+PLOMB is a decentralized voting application that leverages blockchain technology to create a secure, transparent, and accessible voting platform. Built on Lisk, PLOMB ensures the integrity of elections while providing privacy and identity verification through zkMe. This application enables users to create polls, vote securely, and see real-time results—all in a decentralized manner.
 
 Key Features
 Decentralized Voting: Built on Ethereum using smart contracts to handle poll creation and voting processes.
@@ -14,7 +14,7 @@ Gas Fee Coverage: Contestants pay a fee that covers voters' gas fees, ensuring s
 Technology Stack
 Frontend: React (React Router for navigation, State management with Redux or Context API)
 Backend: Node.js, Express.js.
-Blockchain: Ethereum, Solidity, foundry for smart contract development and deployment
+Blockchain: Lisk, Solidity, foundry for smart contract development and deployment
 Identity Verification: zkMe for secure, private credential verification using zero-knowledge proofs
 
 Project Structure
@@ -29,4 +29,4 @@ Contact
 If you have any questions, feel free to reach out:
 
 Email: plombdapp@gmail.com
-Live link: 
+Live link: https://plomb-dapp.vercel.app/
