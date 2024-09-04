@@ -17,7 +17,7 @@ function Navbar() {
         <Link to="Faq">FAQ</Link>
       </div>
       <button className="bg-[#00ACE3] md:px-4 md:py-2 rounded-md font-semibold md:mr-12">
-        Connect Wallet
+        <w3m-button />
       </button>
     </nav>
   );

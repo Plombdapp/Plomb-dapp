@@ -90,8 +90,8 @@ function Footer() {
           {/* Support Links */}
           <div className="space-y-2">
             <h1 className="text-2xl font-bold">Support</h1>
-            <p className="text-[#868686] hover:text-[#00ACE3]">FAQ</p>
-            <Link to="Contact" className="text-[#868686] hover:text-[#00ACE3]">
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">FAQ</p>
+            <Link to="Contact" className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               Contact Us
             </Link>
           </div>
@@ -102,34 +102,43 @@ function Footer() {
             <Link to="/" className="text-[#868686] hover:text-[#00ACE3]">
               Home
             </Link>
-            <Link to="About" className="text-[#868686] hover:text-[#00ACE3]">
+            <Link to="About" className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               About Us
             </Link>
-            <Link to="/Feature" className="text-[#868686] hover:text-[#00ACE3]">
+            <Link to="/Feature" className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               Features
             </Link>
           </div>
 
           {/* Legal Links */}
-          <div className="space-y-2">
+          <div className="space-y-2 ">
             <h1 className="text-2xl font-bold">Legal</h1>
-            <p className="text-[#868686] hover:text-[#00ACE3]">
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               Privacy Policy
             </p>
-            <p className="text-[#868686] hover:text-[#00ACE3]">
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               Terms of Service
             </p>
-            <p className="text-[#868686] hover:text-[#00ACE3]">Cookie Policy</p>
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">Cookie Policy</p>
           </div>
         </section>
 
         {/* Social Media Icons */}
         <h2 className="mt-24">Connect with Us</h2>
         <div className="flex gap-4 mt-2">
-          <FaDiscord className="w-6 h-6 text-[#00ACE3]" />
+        
+          <Link to="https://discord.com/invite/AzwwvPBF">
+          <FaDiscord className="w-6 h-6 text-[#00ACE3]"
+          /></Link>
+          <Link to="https://github.com/Plombdapp">
           <FaGithub className="w-6 h-6 text-[#00ACE3]" />
+          </Link>
+          <Link to=" https://x.com/plombdapp">
           <BsTwitterX className="w-6 h-6 text-[#00ACE3]" />
+          </Link>
+          <Link to="https://www.linkedin.com/in/plomb-dapp-6a7595323?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYhmbz%2BlnSQClvGJtgYDmSg%3D%3D">
           <FaLinkedinIn className="w-6 h-6 text-[#00ACE3]" />
+          </Link>
         </div>
 
         {/* Footer Text */}

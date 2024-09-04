@@ -60,15 +60,12 @@ function ContactUs() {
         <div className="mb-5">
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-[#9E9E9E]"
+            className="block mb-2 text-sm font-medium text-[#9E9E9E]dark:text-white"
           >
             Name
           </label>
           <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type="email"
             placeholder="Enter your full name"
             className="shadow-sm bg-[#333333] border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
