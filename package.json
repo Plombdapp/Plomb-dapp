@@ -6,10 +6,15 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "@zkmelabs/verify-abi": "^0.1.0",
     "@zkmelabs/widget": "^0.3.0",
     "ethers": "^6.13.2",
     "ethersjs": "^0.0.1-security",
+=======
+    "ethers": "^6.13.2",
+    "ipfs-http-client": "^60.0.1",
+>>>>>>> a517ea17fbc2d4e6decc3b97429c7d6ab4e56b31
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",

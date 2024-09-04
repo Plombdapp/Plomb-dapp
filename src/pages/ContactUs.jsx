@@ -10,13 +10,13 @@ function ContactUs() {
         <div class="mb-5">
           <label
             for="email"
-            class="block mb-2 text-sm font-medium text-[#9E9E9E] "
+            class="block mb-2 text-sm font-medium text-[#9E9E9E] dark:text-white"
           >
             Name
           </label>
           <input
             type="email"
-            className="shadow-sm bg-[#333333] border border-gray-300 text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+            className="shadow-sm bg-[#333333] text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
             placeholder="Enter your full name"
             required
           />
@@ -31,7 +31,7 @@ function ContactUs() {
           <input
             type="password"
             placeholder="Enter your email addess"
-            class="shadow-sm bg-[#333333]  border  border-gray-300 text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            class="shadow-sm bg-[#333333] text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             required
           />
         </div>
@@ -45,7 +45,7 @@ function ContactUs() {
           <input
             type="password"
             placeholder="Enter your phone number"
-            class="shadow-sm bg-[#333333] border border-gray-300 text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            class="shadow-sm bg-[#333333] text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-[#333333]-700 border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             required
           />
         </div>
@@ -59,7 +59,7 @@ function ContactUs() {
           </label>
           <textarea
             rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-[#333333] rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-[#333333] rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-[#333333]-700 border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Leave your message"
           ></textarea>
         </form>

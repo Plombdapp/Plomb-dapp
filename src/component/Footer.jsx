@@ -30,26 +30,26 @@ function Footer() {
         <section class="flex justify-between">
           <div class="space-y-2">
             <h1 class="text-2xl font-bold">Support</h1>
-            <p class="text-[#868686]">FAQ</p>
-            <p class="text-[#868686]">Contact Us</p>
+            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">FAQ</p>
+            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Contact Us</p>
           </div>
           <div class="space-y-2 flex flex-col">
             <h1 class="text-2xl font-bold">Quick Links</h1>
-            <Link to="" class="text-[#868686]">
+            <Link to="" class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">
               Home
             </Link>
-            <Link to="" class="text-[#868686]">
+            <Link to="" class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">
               About Us
             </Link>
-            <Link to="" class="text-[#868686]">
+            <Link to="" class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">
               Features
             </Link>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-2 ">
             <h1 class="text-2xl font-bold">Legal</h1>
-            <p class="text-[#868686]">Privacy Policy</p>
-            <p class="text-[#868686]">Terms of Service</p>
-            <p class="text-[#868686]">Cookie Policy</p>
+            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Privacy Policy</p>
+            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Terms of Service</p>
+            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Cookie Policy</p>
           </div>
         </section>
         {/* <!-- connect with us --> */}
