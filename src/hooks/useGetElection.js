@@ -7,19 +7,32 @@ export const useGetElection = () => {
   const contract = useContract(CONTRACT_ADDRESS, CONTRACT_ABI);
   const [election, setElection] = useState(null);
 
-  const getElection = useCallback(
-    async (electionId) => {
-      if (!contract) return;
 
-      try {
-        const electionDetails = await contract.getElection(electionId);
-        setElection(electionDetails);
-      } catch (error) {
-        console.error('Error fetching election details:', error);
-      }
-    },
-    [contract]
-  );
+  const getElection= async (electionId) => {
+    const result = await contract.methods.getElection(electionId).call();
+    const candidates = result.candidates;
+  
+    // Display candidates with images
+    candidates.forEach(candidate => {
+      const imageUrl = `https://ipfs.infura.io/ipfs/${candidate.ipfsHash}`;
+      console.log(`Candidate: ${candidate.name}, Image URL: ${imageUrl}`);
+    });
+  };
+  
+
+  // const getElection = useCallback(
+  //   async (electionId) => {
+  //     if (!contract) return;
+
+  //     try {
+  //       const electionDetails = await contract.getElection(electionId);
+  //       setElection(electionDetails);
+  //     } catch (error) {
+  //       console.error('Error fetching election details:', error);
+  //     }
+  //   },
+  //   [contract]
+  // );
 
   return { election, getElection };
 };
