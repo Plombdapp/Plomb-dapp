@@ -10,25 +10,18 @@ import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import ZKME from "./pages/ZKME";
 import ContactUs from "./pages/ContactUs";
-<<<<<<< HEAD
+
 import Votes from "./pages/Votes";
 import About from "./pages/About";
 import Polls from "./pages/Polls";
 import { Results } from "./pages/Results";
 import '@zkmelabs/widget/dist/style.css';
-
-=======
-import Votes from "../src/pages/Votes";
-
-import About from "./pages/About";
-import Polls from "../src/pages/Polls";
 import Faq from "./pages/Faq";
-import { Results } from "./pages/Results";
 import "@zkmelabs/widget/dist/style.css";
 
 import { configureWeb3Modal } from "./context";
 configureWeb3Modal();
->>>>>>> ddcb4e569dcf5764fef80cb9b3c0b2dee3f5f16e
+
 function App() {
   // State for storing wallet information
   const [account, setAccount] = useState(null);

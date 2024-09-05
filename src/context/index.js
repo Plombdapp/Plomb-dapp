@@ -22,6 +22,6 @@ export const configureWeb3Modal = () =>
   createWeb3Modal({
     ethersConfig: defaultConfig({ metadata }),
     chains: [arbitrum],
-    projectId: import.meta.env.VITE_PROJECT_ID,
+    projectId: '3df925a72247586b5a48b560c072f31c',
     enableAnalytics: false, // Optional - defaults to your Cloud configuration
   });
