@@ -3,11 +3,11 @@ import aboutimg from "../component/assets/third-poll.png";
 
 function AboutPlomb() {
   return (
-    <div className="flex mx-28 pt-36 gap-20">
-      <div className="w-[50%]">
-        <img src={aboutimg} alt="" />
+    <div className="md:flex  md:mx-28 mx-4 md:pt-36 pt-4 md:gap-20 gap-4 text-center">
+      <div className="md:w-[50%]">
+        <img src={aboutimg} alt="" className="mb-4" />
       </div>
-      <div className="w-[50%]">
+      <div className="md:w-[50%]">
         <div>
           <h1 className="text-4xl font-semibold mb-4">About PLOMB</h1>
           <p>

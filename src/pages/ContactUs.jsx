@@ -1,72 +1,141 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!name || !email || !phoneNumber || !message) {
+      setErrorMessage("All fields are required.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "https://mailsender-hfm3.onrender.com/send-contact-email",
+        {
+          name,
+          email,
+          phoneNumber,
+          message,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Response:", response.data);
+      setSuccessMessage("Your message has been sent successfully!");
+      setErrorMessage("");
+
+      setName("");
+      setEmail("");
+      setPhoneNumber("");
+      setMessage("");
+
+      setTimeout(() => setSuccessMessage(""), 5000);
+    } catch (error) {
+      console.error("Error:", error);
+      setErrorMessage("Failed to send the message. Please try again later.");
+      setSuccessMessage("");
+
+      setTimeout(() => setErrorMessage(""), 5000);
+    }
+  };
+
   return (
     <div>
       <h1 className="text-[#00ACE3] text-2xl text-center font-semibold pt-32">
         Contact Us
       </h1>
-      <form class="max-w-sm mx-auto mt-16">
-        <div class="mb-5">
+      <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-16">
+        <div className="mb-5">
           <label
-            for="email"
-            class="block mb-2 text-sm font-medium text-[#9E9E9E] dark:text-white"
+            htmlFor="name"
+            className="block mb-2 text-sm font-medium text-[#9E9E9E]dark:text-white"
           >
             Name
           </label>
           <input
             type="email"
-            className="shadow-sm bg-[#333333] text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
             placeholder="Enter your full name"
+            className="shadow-sm bg-[#333333] border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-        <div class="mb-5">
+        <div className="mb-5">
           <label
-            for="password"
-            class="block mb-2 text-sm font-medium text-[#9E9E9E] dark:text-white"
+            htmlFor="email"
+            className="block mb-2 text-sm font-medium text-[#9E9E9E]"
           >
             Email
           </label>
           <input
-            type="password"
-            placeholder="Enter your email addess"
-            class="shadow-sm bg-[#333333] text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            className="shadow-sm bg-[#333333] border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-        <div class="mb-5">
+        <div className="mb-5">
           <label
-            for="repeat-password"
-            class="block mb-2 text-sm font-medium text-[#9E9E9E] dark:text-white"
+            htmlFor="phoneNumber"
+            className="block mb-2 text-sm font-medium text-[#9E9E9E]"
           >
             Phone Number
           </label>
           <input
-            type="password"
+            type="tel"
+            id="phoneNumber"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Enter your phone number"
-            class="shadow-sm bg-[#333333] text-[#9E9E9E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-[#333333]-700 border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+            className="shadow-sm bg-[#333333] border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-
-        <form class="max-w-sm mx-auto">
+        <div className="mb-5">
           <label
-            for="message"
-            class="block mb-2 text-sm font-medium text-[#9E9E9E] dark:text-white"
+            htmlFor="message"
+            className="block mb-2 text-sm font-medium text-[#9E9E9E]"
           >
             Message
           </label>
           <textarea
+            id="message"
             rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-[#333333] rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-[#333333]-700 border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Leave your message"
+            className="block p-2.5 w-full text-sm text-white bg-[#333333] rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+            required
           ></textarea>
-        </form>
+        </div>
+
+        {errorMessage && (
+          <div className="text-red-500 mt-4">{errorMessage}</div>
+        )}
+        {successMessage && (
+          <div className="text-green-500 mt-4">{successMessage}</div>
+        )}
 
         <div className="flex justify-between">
           <div></div>
-          <button className="bg-[#00ACE3] px-6 py-2 rounded-md font-semibold mt-6 flex-end">
+          <button
+            type="submit"
+            className="bg-[#00ACE3] px-6 py-2 rounded-md font-semibold mt-6"
+          >
             Submit
           </button>
         </div>

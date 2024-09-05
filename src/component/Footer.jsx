@@ -1,59 +1,130 @@
-import React from "react";
-import { FaDiscord } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa6";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { FaDiscord, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
-import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async () => {
+    if (email.trim() === "") {
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const data = JSON.stringify({ email });
+
+      const config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: "https://mailsender-hfm3.onrender.com/send-subscription-email",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      const response = await axios.request(config);
+      console.log("Subscription successful:", response.data);
+      setIsSubscribed(true);
+      setMessage("You have successfully subscribed to the newsletter!");
+    } catch (error) {
+      setMessage("Failed to subscribe. Please try again later.");
+      console.error("Error subscribing:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 6000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
   return (
-    <div className="">
-      {/* newsletter --------- */}
-      <div class="flex flex-col text-center mt-40 text-white  ">
-        <h1 class="text-2xl mb-6">
+    <div>
+      {/* Newsletter Section */}
+      <div className="flex flex-col text-center mt-40 text-white">
+        <h1 className="md:text-2xl mb-6">
           Stay updated and always receive your weekly poll alerts!
         </h1>
 
-        <div class="relative justify-center mx-72">
+        <div className="relative justify-center md:mx-72 mx-8">
           <input
-            type="text"
+            type="email"
             placeholder="Enter your email address"
-            class="bg-[#333333] p-4 w-full focus:border-[#00ACE3] focus:border-2 rounded-md"
+            className="bg-[#333333] p-4 w-full focus:border-[#00ACE3] focus:border-2 rounded-md"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <button class="absolute right-4  bg-[#00ACE3] text-white px-6 py-2 rounded-md font-semibold mt-2">
+          <button
+            onClick={handleSubscribe}
+            className="absolute right-4 bg-[#00ACE3] text-white px-6 py-2 rounded-md font-semibold mt-2"
+          >
             Subscribe
           </button>
         </div>
-      </div>
-      {/* quick links---------- */}
-      <footer class="mx-20 mt-40">
-        <section class="flex justify-between">
-          <div class="space-y-2">
-            <h1 class="text-2xl font-bold">Support</h1>
-            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">FAQ</p>
-            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Contact Us</p>
+
+        {/* Success/Error Message */}
+        {message && (
+          <div
+            className={`mt-4 ${
+              isSubscribed ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            {message}
           </div>
-          <div class="space-y-2 flex flex-col">
-            <h1 class="text-2xl font-bold">Quick Links</h1>
-            <Link to="" class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">
+        )}
+      </div>
+
+      {/* Footer Links and Social Icons */}
+      <footer className="mx-20 mt-40">
+        <section className="flex justify-between">
+          {/* Support Links */}
+          <div className="space-y-2">
+            <h1 className="text-2xl font-bold">Support</h1>
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">FAQ</p>
+            <Link to="Contact" className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
+              Contact Us
+            </Link>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-2 flex flex-col">
+            <h1 className="text-2xl font-bold">Quick Links</h1>
+            <Link to="/" className="text-[#868686] hover:text-[#00ACE3]">
               Home
             </Link>
-            <Link to="" class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">
+            <Link to="About" className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               About Us
             </Link>
-            <Link to="" class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">
+            <Link to="/Feature" className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
               Features
             </Link>
           </div>
-          <div class="space-y-2 ">
-            <h1 class="text-2xl font-bold">Legal</h1>
-            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Privacy Policy</p>
-            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Terms of Service</p>
-            <p class="text-[#868686] hover:text-[#00ACE3] cursor-pointer">Cookie Policy</p>
+
+          {/* Legal Links */}
+          <div className="space-y-2 ">
+            <h1 className="text-2xl font-bold">Legal</h1>
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
+              Privacy Policy
+            </p>
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">
+              Terms of Service
+            </p>
+            <p className="text-[#868686] hover:text-[#00ACE3] hover:text-[#00ACE3] cursor-pointer">Cookie Policy</p>
           </div>
         </section>
-        {/* <!-- connect with us --> */}
-        <h2 class="mt-24">Connect with Us</h2>
+
+        {/* Social Media Icons */}
+        <h2 className="mt-24">Connect with Us</h2>
         <div className="flex gap-4 mt-2">
         
           <Link to="https://discord.com/invite/AzwwvPBF">
@@ -70,7 +141,8 @@ function Footer() {
           </Link>
         </div>
 
-        <h2 class="text-center text-lg text-[#EDEDED] mt-20">
+        {/* Footer Text */}
+        <h2 className="text-center text-lg text-[#EDEDED] mt-20">
           ©2024 PLOMB. All Rights Reserved.
         </h2>
       </footer>

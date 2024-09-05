@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+PLOMB - Decentralized Voting Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overview
+PLOMB is a decentralized voting application that leverages blockchain technology to create a secure, transparent, and accessible voting platform. Built on Lisk, PLOMB ensures the integrity of elections while providing privacy and identity verification through zkMe. This application enables users to create polls, vote securely, and see real-time results—all in a decentralized manner.
 
-## Available Scripts
+Key Features
+Decentralized Voting: Built on Ethereum using smart contracts to handle poll creation and voting processes.
+Secure Identity Verification: zkMe integration ensures voter identities are verified privately and securely.
+Two Smart Contracts: One smart contract handles poll creation, and another manages the voting process.
+Real-time Voting Results: Transparent and immediate access to election outcomes.
+User Roles: Includes voters, contestants, and admin enabling flexible poll creation and voting participation.
+Gas Fee Coverage: Contestants pay a fee that covers voters' gas fees, ensuring smoother participation.
 
-In the project directory, you can run:
+Technology Stack
+Frontend: React (React Router for navigation, State management with Redux or Context API)
+Backend: Node.js, Express.js.
+Blockchain: Lisk, Solidity, foundry for smart contract development and deployment
+Identity Verification: zkMe for secure, private credential verification using zero-knowledge proofs
 
-### `npm start`
+Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+/frontend             # React frontend
+/backend              # Node.js/Express backend
+/smart-contracts      # Solidity smart contracts
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Contact
+If you have any questions, feel free to reach out:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: plombdapp@gmail.com
+Live link: https://plomb-dapp.vercel.app/

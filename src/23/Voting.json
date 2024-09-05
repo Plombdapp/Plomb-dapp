@@ -22,9 +22,21 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "string[]",
-				"name": "candidateNames",
-				"type": "string[]"
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ipfsHash",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Voting.Candidate[]",
+				"name": "candidateData",
+				"type": "tuple[]"
 			}
 		],
 		"name": "createElection",
@@ -82,10 +94,22 @@
 				"type": "uint256"
 			},
 			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ipfsHash",
+						"type": "string"
+					}
+				],
 				"indexed": false,
-				"internalType": "string[]",
+				"internalType": "struct Voting.Candidate[]",
 				"name": "candidates",
-				"type": "string[]"
+				"type": "tuple[]"
 			}
 		],
 		"name": "ElectionCreated",
@@ -138,7 +162,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "candidate",
+				"name": "candidateName",
 				"type": "string"
 			}
 		],
@@ -259,7 +283,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "candidate",
+				"name": "candidateName",
 				"type": "string"
 			}
 		],
@@ -305,9 +329,21 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "string[]",
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ipfsHash",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Voting.Candidate[]",
 				"name": "candidates",
-				"type": "string[]"
+				"type": "tuple[]"
 			},
 			{
 				"internalType": "uint256[]",
@@ -335,7 +371,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "candidate",
+				"name": "candidateName",
 				"type": "string"
 			}
 		],

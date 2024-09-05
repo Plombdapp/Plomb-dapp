@@ -60,15 +60,15 @@ const Admin = () => {
   };
 
   const handleFileChange = (e, index) => {
-    const file = e.target.files[0]; // Allow only one file selection
+    const file = e.target.files[0];
     if (file) {
       const updatedUploadedImages = [...uploadedImages];
-      updatedUploadedImages[index] = file; // Update image for specific participant
+      updatedUploadedImages[index] = file;
       setUploadedImages(updatedUploadedImages);
     }
   };
 
-  // Update for drag and drop functionality (optional)
+  // Update for drag and drop functionality
   const handleDragOver = (e) => {
     e.preventDefault();
     setIsDragging(true);
@@ -84,20 +84,20 @@ const Admin = () => {
     const file = e.dataTransfer.files[0];
     if (file) {
       const updatedUploadedImages = [...uploadedImages];
-      updatedUploadedImages[index] = file; // Update image for specific participant
+      updatedUploadedImages[index] = file;
       setUploadedImages(updatedUploadedImages);
     }
   };
 
   return (
     <div className="bg-[#252525]">
-      <section className="mx-52 pt-20 ">
+      <section className="md:mx-52 pt-20 mx-4 ">
         <h1 className="text-[#00ACE3] text-2xl text-center font-semibold">
           Admin Dashboard
         </h1>
         <div>
           <h3 className="mt-16 mb-2">Poll Title</h3>
-          <div className=" justify-between grid grid-cols-3 gap-40">
+          <div className=" justify-between grid grid-cols-3 md:gap-40 gap-8">
             <div className="col-span-2">
               <input
                 type="text"
@@ -135,7 +135,7 @@ const Admin = () => {
         </div>
         <div>
           <h3 className="mt-8 mb-2">Set Voting Date</h3>
-          <div className=" justify-between grid grid-cols-3 gap-40">
+          <div className=" justify-between grid grid-cols-3 md:gap-40 gap-20">
             <div>
               <input
                 type="date"
@@ -156,7 +156,7 @@ const Admin = () => {
         </div>
         <div>
           <h3 className="mt-8 mb-2">Set Voting Duration</h3>
-          <div className=" justify-between grid grid-cols-4 gap-40">
+          <div className=" justify-between grid md:grid-cols-4 md:gap-40 gap-20 grid-cols-3">
             <div>
               <input
                 type="number"
@@ -177,18 +177,18 @@ const Admin = () => {
             />
           </div>
         </div>
-        <h3 className="text-[#00ACE3] mt-8 font-semibold mb-6">
+        <h3 className="text-[#00ACE3] mt-8 font-semibold  text-xl mb-6">
           {`Participant ${participants[step].id}`}
         </h3>
-        <div className="flex">
+        <div className="flex gap-6">
           <button
-            className="left-btn text-8xl text-[#00ACE3] font-bold "
+            className="left-btn text-3xl text-[#00ACE3]  md:w-[5%] md:-ml-20  md:mr-4 "
             onClick={prevParticipant}
             disabled={step === 0}
           >
             &lt;
           </button>
-          <div className="flex justify-between">
+          <div className="flex justify-between md:w-[100%] mx-4 md:mx-0 gap-12">
             <div>
               <div>
                 <h3 className="mb-2">Name of Participants</h3>
@@ -209,7 +209,7 @@ const Admin = () => {
                   placeholder="Party affiliation"
                   value={participants[step].partyAffiliation}
                   onChange={handleParticipantChange}
-                  className="bg-[#333333] p-2 focus:border-[#00ACE3] focus:border-2 rounded-md w-60"
+                  className="bg-[#333333] p-2 focus:border-[#00ACE3] focus:border-2 rounded-md md:w-60"
                 />
               </div>
             </div>
@@ -222,7 +222,7 @@ const Admin = () => {
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
               >
-                <div className="flex flex-col justify-center items-center bg-[#333333] px-12 py-6 rounded-md">
+                <div className="flex flex-col justify-center items-center bg-[#333333] md:px-12 md:py-6 rounded-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -257,17 +257,10 @@ const Admin = () => {
                 )}
                 <small>Files Supported: png, jpg, jpeg, webp</small>
               </div>
-              {/* <button
-              className="right-btn"
-              onClick={nextParticipant}
-              disabled={step === participants.length - 1}
-            >
-              &gt;
-            </button> */}
             </div>
           </div>
           <button
-            className="right-btn text-8xl text-[#00ACE3] font-bold"
+            className="right-btn text-3xl text-[#00ACE3]  md:w-[5%] md:-mr-20 md:ml-4"
             onClick={nextParticipant}
             disabled={step === participants.length - 1}
           >

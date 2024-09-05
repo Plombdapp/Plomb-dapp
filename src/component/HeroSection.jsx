@@ -7,18 +7,18 @@ function HeroSection() {
 
   const handleClick = () => {
     Navigate("/Admin");
-  }
+  };
   return (
     <div>
-      <div className="flex justify-between mx-28 pt-32">
+      <div className=" justify-between md:mx-28 md:pt-32 pt-16 flex flex-col-reverse md:flex-row items-center md:text-start">
         <div>
-          <h1 className="text-5xl font-bold">
+          <h1 className="md:text-5xl text-2xl font-bold mt-8 md:mt-0 ">
             Welcome to PLOMB <br />
             The Future of
             <br />
             <span className="text-[#00ACE3]">Decentralized Voting</span>
           </h1>
-          <h4 className="text-2xl font-semibold mt-4">
+          <h4 className="text-xl font-semibold mt-4">
             Eliminating Voting Rigging with <br /> Blockchain Technology
           </h4>
           <p className="text-md mt-2">
@@ -26,7 +26,10 @@ function HeroSection() {
             future of Decentralized Voting, how it eliminates <br /> rigging,
             and improves transparency.
           </p>
-          <button onClick={handleClick} className="bg-[#00ACE3] mt-8 rounded-md py-2 px-6 font-semibold ">
+          <button
+            onClick={handleClick}
+            className="bg-[#00ACE3] mt-8 rounded-md py-2 px-6 font-semibold "
+          >
             Create Poll
           </button>
         </div>
