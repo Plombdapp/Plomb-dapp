@@ -1,18 +1,29 @@
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { ConnectButton } from "thirdweb/react";
+
+import { client } from "./client";
 
 import Admin from "./pages/Admin";
-
 import LandingPage from "./pages/LandingPage";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import ZKME from "./pages/ZKME";
 import ContactUs from "./pages/ContactUs";
-import Votes from "../src/pages/Votes";
+import Votes from "./pages/Votes";
 import About from "./pages/About";
-import Polls from "../src/pages/Polls";
+import Polls from "./pages/Polls";
 import { Results } from "./pages/Results";
 import '@zkmelabs/widget/dist/style.css';
+
 function App() {
+  // State for storing wallet information
+  const [account, setAccount] = useState(null);
+  const [provider, setProvider] = useState(null);
+
+  
+  
+
   return (
     <>
       <Navbar />
@@ -28,7 +39,6 @@ function App() {
           <Route path="/Polls" element={<Polls />} />
           <Route path="/ZKME" element={<ZKME />} />
         </Routes>
-
         <Footer />
       </main>
     </>

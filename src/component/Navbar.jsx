@@ -1,30 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import plomb from "../component/assets/plomb.png";
+import { ConnectButton } from "thirdweb/react";
+import { client } from "../client";
 
-function Navbar() {
+
+
+function Navbar({ initiateWalletConnection }) {
   return (
-    <nav className=" flex justify-between items-center p-4 border-b-2 border-b-[#00ACE3]  bg-[#313131] text-white">
+    <nav className="flex justify-between items-center p-4 border-b-2 border-b-[#00ACE3] bg-[#313131] text-white">
       <div className="ml-12">
         <img src={plomb} alt="plomb-logo" className="hover:w-40 hover:h-10" />
       </div>
       <div className="text-md space-x-4 font-bold">
-        <Link to="" href="/">
+        <Link to="/" className="hover:underline">
           Home
         </Link>
-        <Link to="" href>
+        <Link to="/features" className="hover:underline">
           Features
         </Link>
-        <Link to="" href="/about">
+        <Link to="/about" className="hover:underline">
           About Us
         </Link>
-        <Link to="" href="/contact">
+        <Link to="/contact" className="hover:underline">
           Contact Us
         </Link>
       </div>
-      <button className="bg-[#00ACE3] px-4 py-2 rounded-md font-semibold mr-12">
+      {/* Connect Wallet Button */}
+      {/* <button
+        className="bg-[#00ACE3] px-4 py-2 rounded-md font-semibold mr-12"
+        onClick={} // Trigger the wallet connection on click
+      >
         Connect Wallet
-      </button>
+      </button> */}
+      <ConnectButton client={client} /> 
     </nav>
   );
 }
